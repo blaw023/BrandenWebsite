@@ -2,10 +2,10 @@
 
 Folder Structure
 
-Js - JavaScript Files
+home-app (Home Page)
 
-Html - HTML Files
+invesments-app (Investments Page)
 
-Back End - All back end files
+sports-app (Sports Page(s))
 
-Application Files - Everything else
+books-app (Books Page)
