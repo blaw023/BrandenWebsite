@@ -22,10 +22,14 @@ namespace Blaw_Website.BlawEntityFramework.DBContext
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add<Images>(new ImageMapping());
+            modelBuilder.Configurations.Add<Books>(new BooksMapping());
+            modelBuilder.Configurations.Add<BookReview>(new BookReviewMapping());
 
         }
 
         public DbSet<Images> Images { get; set; }
+        public DbSet<Books> Books { get; set; }
+        public DbSet<BookReview> BookReview { get; set; }
 
     }
 }
