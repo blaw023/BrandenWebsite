@@ -1,0 +1,34 @@
+﻿body {
+  background-image: url("../../../Images/site_background2.jpg");
+  background-size: cover; }
+
+#brandenNav {
+  background-color: white; }
+
+#BlawPageHeader {
+  color: #286090;
+  font-family: 'Comic Sans MS', cursive, sans-serif; }
+
+#brandenheader {
+  font-family: 'Comic Sans MS', cursive, sans-serif; }
+
+#homeHeader {
+  color: #286090;
+  font-family: 'Comic Sans MS', cursive, sans-serif; }
+
+#pageDropdown {
+  color: #286090; }
+
+#explainBooks {
+  color: #000000;
+  font-family: 'Comic Sans MS', cursive, sans-serif; }
+
+img {
+  width: 100px;
+  height: 100px; }
+
+.brandenNavBar md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0; }
+
