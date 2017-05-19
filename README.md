@@ -2,10 +2,9 @@
 
 Folder Structure
 
-home-app (Home Page)
+branden-app (Site Pages)
+--Home Page
+--Books Page
+--Investment Page
+--My Skills Page
 
-invesments-app (Investments Page)
-
-sports-app (Sports Page(s))
-
-books-app (Books Page)
