@@ -13,9 +13,12 @@
         vm.linkedln = SocialMedia.Linkedln;
         vm.twitter = SocialMedia.Twitter;
         vm.instagram = SocialMedia.Instagram;
+        vm.github = SocialMedia.Github;
+        vm.isCollapsed = true;
         
         //angular material
         vm.currentNavItem = "home";
+       
 
         //functions
         vm.setImageId = setImageId;

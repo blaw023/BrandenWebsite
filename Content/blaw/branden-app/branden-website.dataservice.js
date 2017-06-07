@@ -8,7 +8,8 @@
         var service = {
 
             getImages : getImages,
-            getBooks : getBooks
+            getBooks : getBooks,
+            getInvestments : getInvestments
         }
 
         return service;
@@ -28,6 +29,15 @@
             var baseurl = 'http://localhost:2713/';
 
             return $http.get(baseurl + 'api/books/getBooks')
+                .then(ImageResponseSuccess)
+                .catch(ImageResponseError)
+        }
+
+        function getInvestments()
+        {
+            var baseurl = 'http://localhost:2713/';
+
+            return $http.get(baseurl + 'api/investments/getInvestments')
                 .then(ImageResponseSuccess)
                 .catch(ImageResponseError)
         }
