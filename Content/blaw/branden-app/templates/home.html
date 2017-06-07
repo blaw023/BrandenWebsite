@@ -9,59 +9,123 @@
 <body ng-app="branden-site.module">
         <div class="container">
             <div ui-view>
-                <div ng-cloak="" class="brandenNavBar">
+                <div ng-cloak="" class="brandenNavBar" layout="row" layout-align="end center">
                     <md-content class="md-padding">
                         <md-nav-bar md-selected-nav-item="vm.currentNavItem"
                                  nav-bar-aria-label="navigation links">
-                            <md-nav-item md-nav-sref="home" name="home">
+                            <md-nav-item md-nav-sref="home" name="home" >
                                 Home
                             </md-nav-item>
                             <md-nav-item md-nav-sref="branden-books" name="books">
                                 My Books
                             </md-nav-item>
-                            <md-nav-item md-nav-click="goto('page2')" name="investments">
+                            <md-nav-item md-nav-sref="branden-investments" name="investments">
                                 My Investments
                             </md-nav-item>
-                            <md-nav-item md-nav-click="goto('page3')" name="skills">
+                            <md-nav-item md-nav-sref="branden-skills" name="skills">
                                 My Skills
                             </md-nav-item>
                         </md-nav-bar>
                     </md-content>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header" id="BlawPageHeader">
-                            Branden Lawrence
-                            <a ng-href="{{vm.linkedln}}" class="btn btn-default" target="_blank">
-                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            </a>
-                            <a ng-href="{{vm.twitter}}" class="btn btn-default" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a ng-href="{{vm.instagram}}" class="btn btn-default" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </h1>
-                    </div>
                 </div>
                 <!--Content-->
+                <section>
+                    <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">About Me</button>
+                    <p></p>
+                    <div uib-collapse="vm.isCollapsed">
+                        <div class="form-group row well well-lg">
+                            <div class="col-md-12" id="brandenCarousel">
+                                <div class="col-md-3">
+                                    <div style="height:175px; width:175px;">
+                                        <div uib-carousel active="vm.activeSlide" interval="vm.myInterval">
+                                            <div uib-slide ng-repeat="slide in vm.images" index="slide.imageId">
+                                                <img ng-src="{{slide.image}}" style="margin:auto; height:175px; width:165px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="aboutMe">
+                                        <p>Hi I'm Branden and welcome to my site. I'm making my programming skills better by doing this.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="row">
+                                        <a ng-href="{{vm.linkedln}}" class="btn btn-default" target="_blank">
+                                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                        </a>
 
-                <!--Implement carousel of pictures-->
-                <div id="brandenCarousel" class="col-md-6">
-                    <div style="height:400px; width:400px;">
-                        <div uib-carousel active="vm.activeSlide" interval="vm.myInterval">
-                            <div uib-slide ng-repeat="slide in vm.images" index="slide.imageId">
-                                <img ng-src="{{slide.image}}" style="margin:auto; height:400px; width:390px;">
+                                        <a ng-href="{{vm.twitter}}" class="btn btn-default" target="_blank">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="row">
+                                        <a ng-href="{{vm.instagram}}" class="btn btn-default" target="_blank">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </a>
+
+                                        <a ng-href="{{vm.github}}" class="btn btn-default" target="_blank">
+                                            <i class="fa fa-github-square" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <hr />
+                      </div>
                     </div>
-                </div>
-
+                </section>
+               
                 <!--About Me-->
-                <div id="aboutMe" class="col-md-6">
-                    <p>Hi I'm Branden and welcome to my site.</p>
-                </div>
+               <!--<div class="col-md-6">-->
+                <!--<md-toolbar class="md-primary">
+                    <div class="md-toolbar-tools">
+                        <h2 class="md-flex">About Me</h2>
+                    </div>
+                </md-toolbar>
+                <md-content flex="" layout-padding="">
+                    <div class="form-group row">
+                      <div class="col-md-12" id="brandenCarousel">
+                          <div class="col-md-6">
+                              <div style="height:175px; width:175px;">
+                                  <div uib-carousel active="vm.activeSlide" interval="vm.myInterval">
+                                      <div uib-slide ng-repeat="slide in vm.images" index="slide.imageId">
+                                          <img ng-src="{{slide.image}}" style="margin:auto; height:175px; width:165px;">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="row">
+                                  <a ng-href="{{vm.linkedln}}" class="btn btn-default" target="_blank">
+                                      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                  </a>
+
+                                  <a ng-href="{{vm.twitter}}" class="btn btn-default" target="_blank">
+                                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                                  </a>
+                              </div>
+                              <div class="row">
+                                  <a ng-href="{{vm.instagram}}" class="btn btn-default" target="_blank">
+                                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                                  </a>
+
+                                  <a ng-href="{{vm.github}}" class="btn btn-default" target="_blank">
+                                      <i class="fa fa-github-square" aria-hidden="true"></i>
+                                  </a>
+                              </div>
+                          </div>
+                        </div>
+                    </div>                  
+                    <hr/>
+
+                    <div id="aboutMe">
+                        <p>Hi I'm Branden and welcome to my site. I'm making my programming skills better by doing this.</p>
+                    </div>
+                </md-content>-->
+              </div>
             </div>
-        </div>
-</body>
+       </div>
+  </body>
 </html>
