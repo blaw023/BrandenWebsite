@@ -1,9 +1,9 @@
 ﻿    angular
         .module('branden-site.module')
-        .factory('branden-site.dataservice',['$http', '$q', BrandenDataService])
+        .factory('branden-site.dataservice',['$http', '$q', 'config', BrandenDataService])
         
 
-    function BrandenDataService($http, $q)
+    function BrandenDataService($http, $q, config)
     {
         var service = {
 
@@ -17,37 +17,28 @@
 
         function getImages()
         {
-            //put as config item
-            var baseurl = 'http://localhost:2713/';
-
-            return $http.get(baseurl + 'api/homepage/getImages')
+            return $http.get(config.apiUrl + 'api/homepage/getImages')
                 .then(ResponseSuccess)
                 .catch(ResponseError);         
         }
 
         function getBooks()
         {
-            var baseurl = 'http://localhost:2713/';
-
-            return $http.get(baseurl + 'api/books/getBooks')
+            return $http.get(config.apiUrl + 'api/books/getBooks')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }
 
         function getInvestments()
         {
-            var baseurl = 'http://localhost:2713/';
-
-            return $http.get(baseurl + 'api/investments/getInvestments')
+            return $http.get(config.apiUrl + 'api/investments/getInvestments')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }
 
         function getSkillsVideos()
         {
-            var baseurl = 'http://localhost:2713/';
-
-            return $http.get(baseurl + 'api/skills/getSkillsVideos')
+            return $http.get(config.apiUrl + 'api/skills/getSkillsVideos')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }

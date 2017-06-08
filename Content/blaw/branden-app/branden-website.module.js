@@ -8,6 +8,8 @@
         }).constant('TransactionType', {
             Roth: "Roth IRA",
             BWealth: "Branden's Personal Account"
+        }).constant('config',{
+            apiUrl: 'http://localhost:2713/'
         });
         
     
