@@ -1,0 +1,126 @@
+﻿<html>
+<body ng-app="branden-site.module">
+    <div ng-cloak="" class="brandenNavBar" layout="row" layout-align="end center">
+        <md-content class="md-padding">
+            <md-nav-bar md-selected-nav-item="vm.currentNavItem"
+                        nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-sref="home" name="home">
+                    Home
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-books" name="books">
+                    My Books
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-investments" name="investments">
+                    My Investments
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-skills" name="skills">
+                    My Skills
+                </md-nav-item>
+            </md-nav-bar>
+        </md-content>
+    </div>
+    <br />
+  <section>
+      <h2 id="BlawPageHeader">My Books</h2>
+  </section>
+    <br/>
+  <section>
+     <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">Toggle Heartwarming Books Intro</button>
+      <hr>
+      <div uib-collapse="vm.isCollapsed">
+          <div id ="BlawPageHeader" class="well well-lg">
+              <p>
+                  Ever since I was young I took a deep interest in books. I used to be the kid that had a bedtime at 10pm but would stay up
+                  until 2 in the morning reading. Something about a good book gets you so involved with its world and characters. Even with a busy schedule
+                  now, I still try and read every day.
+              </p>
+              <p>
+                  I'm going to do what I thought was once the impossible and trim all my favorite books into a top 6 list(with reviews). Enjoy!
+              </p>
+          </div>
+      </div>
+  </section>
+    <br/>
+
+    <section ng-if="vm.isBooksList">
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">Books</h2>
+            </div>
+        </md-toolbar>
+        <md-content flex="" layout-padding="">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td width="15%">Author</td>
+                        <td width="21%">Book</td>
+                        <td width="7%"></td>
+                        <td width="7%">Ranking</td>
+                        <td width="13%">My Rating</td>
+                        <td width="37%">Synopsis</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="book in vm.books">
+                        <td width="15%">{{book.author}}
+                        <td width="15%">
+                            <a href="" ng-click="vm.showReview(book)">{{book.bookName}}</a>
+                        </td>
+                        <td width="18%">
+                            <img ng-src="{{book.bookImage}}" alt="Picture" />
+                        </td>
+                        <td width="7%">{{book.bookCode}}</td>
+                        <td width="10%">
+                            <span uib-rating ng-model="book.rating" read-only="vm.isReadOnly"></span>
+                        </td>
+                        <td width="35%">{{book.bookSynopsis}}</td>
+                    </tr>
+                </tbody>
+            </table>
+       </md-content>
+</section>
+
+    <section ng-if="vm.isReview">
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">My Review</h2>
+            </div>
+        </md-toolbar>
+        <md-content flex="" layout-padding="">
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <h3><u>Author</u></h3>
+                    <p>{{vm.currentBook.author}}</p>
+                </div>             
+            </div>
+            <hr />
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <h3><u>Book Name</u></h3>
+                    <p>{{vm.currentBook.bookName}}</p>
+                </div>
+            </div>
+            <hr />
+
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <h3><u>Book Review</u></h3>
+                    <p>{{vm.currentBook.bookReview}}</p>
+                </div>
+            </div>
+            <hr />
+
+            <div class="form-group row">
+                <div class="col-lg-9">
+                    <button type="button" class="btn btn-default" ng-click="vm.goBackToBooks()">Back to Book List</button>
+                </div>
+                <div class="col-lg-3">
+                    <button type="button" class="btn btn-primary">Search Book on Amazon</button>
+                </div>
+            </div>
+       </md-content>
+</section>
+</body>
+</html>
+

@@ -2,10 +2,9 @@
 
 Folder Structure
 
-Js - JavaScript Files
+branden-app (Site Pages)
+--Home Page
+--Books Page
+--Investment Page
+--My Skills Page
 
-Html - HTML Files
-
-Back End - All back end files
-
-Application Files - Everything else
