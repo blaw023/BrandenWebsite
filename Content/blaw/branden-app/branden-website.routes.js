@@ -24,7 +24,14 @@
 		$stateProvider.state('branden-skills', {
 			url: '/skills',
 			templateUrl: 'skills.html',
-			controller: 'branden-skills.controller as vm'
+			controller: 'branden-skills.controller as vm',
+            resolve: {
+                skillsVideos: [
+                    'branden-site.dataservice', function (service) {
+                        return service.getSkillsVideos();
+                    }
+                ]
+}
 		});
 
 		$stateProvider.state('branden-investments', {

@@ -25,7 +25,7 @@
   </section>
     <br/>
   <section>
-     <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">Toggle Heartwarming Intro</button>
+     <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">Toggle Heartwarming Books Intro</button>
       <hr>
       <div uib-collapse="vm.isCollapsed">
           <div id ="BlawPageHeader" class="well well-lg">
@@ -35,7 +35,7 @@
                   now, I still try and read every day.
               </p>
               <p>
-                  I'm going to do what I thought was once the impossible and trim all my favorite books into a top 10 list(with reviews). Enjoy!
+                  I'm going to do what I thought was once the impossible and trim all my favorite books into a top 6 list(with reviews). Enjoy!
               </p>
           </div>
       </div>
@@ -56,8 +56,8 @@
                         <td width="21%">Book</td>
                         <td width="7%"></td>
                         <td width="7%">Ranking</td>
-                        <td width="10%">My Rating</td>
-                        <td width="40%">Synopsis</td>
+                        <td width="13%">My Rating</td>
+                        <td width="37%">Synopsis</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,7 +89,7 @@
         <md-content flex="" layout-padding="">
             <div class="form-group row">
                 <div class="col-md-12">
-                    <h3>Author:</h3>
+                    <h3><u>Author</u></h3>
                     <p>{{vm.currentBook.author}}</p>
                 </div>             
             </div>
@@ -97,7 +97,7 @@
 
             <div class="form-group row">
                 <div class="col-md-12">
-                    <h3>Book Name:</h3>
+                    <h3><u>Book Name</u></h3>
                     <p>{{vm.currentBook.bookName}}</p>
                 </div>
             </div>
@@ -105,7 +105,7 @@
 
             <div class="form-group row">
                 <div class="col-md-12">
-                    <h3>Book Review:</h3>
+                    <h3><u>Book Review</u></h3>
                     <p>{{vm.currentBook.bookReview}}</p>
                 </div>
             </div>

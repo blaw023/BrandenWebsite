@@ -31,6 +31,9 @@
            
         }
 
+        ///<summary>
+        ///Sets graph alignment for given data.
+        ///</summary>
         function createInvestmentGraph() {
           
             var subjectAData = [];
@@ -69,6 +72,7 @@
             };
         }
 
+        //Not needed?
         function chartClick(points, evt) {
             console.log(points, evt);
         }

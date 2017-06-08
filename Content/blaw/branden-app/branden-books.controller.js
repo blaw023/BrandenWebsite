@@ -30,6 +30,9 @@
             setRating();
         }
 
+        ///<summary>
+        ///Called when user wants to see review of book
+        ///</summary>
         function showReview(book)
         {
             vm.currentBook = book;
@@ -37,12 +40,18 @@
             vm.isBooksList = false;
         }
 
+        ///<summary>
+        ///Called when user is done with review and wants to go back to main books page.
+        ///</summary>
         function goBackToBooks()
         {
             vm.isReview = false;
             vm.isBooksList = true;
         }
-
+        
+        ///<summary>
+        ///On activate set the star rating for each book.
+        ///</summary>
         function setRating()
         {
             vm.books.forEach(function (book) {

@@ -14,12 +14,13 @@
         vm.twitter = SocialMedia.Twitter;
         vm.instagram = SocialMedia.Instagram;
         vm.github = SocialMedia.Github;
+
         vm.isCollapsed = true;
-        
+        vm.showAboutMe = true;
+                
         //angular material
         vm.currentNavItem = "home";
        
-
         //functions
         vm.setImageId = setImageId;
         
@@ -31,7 +32,9 @@
            setImageId();
         }
 
+        ///<summary>
         //sets Image Id in vm.images[]
+        ///</summary>
         function setImageId()
         {
             for(var i = 0; i < vm.images.length; i++)

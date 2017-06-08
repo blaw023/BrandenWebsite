@@ -13,12 +13,68 @@
                 <md-nav-item md-nav-sref="branden-investments" name="investments">
                     My Investments
                 </md-nav-item>
-                <md-nav-item md-nav-sref="'branden-skills" name="skills">
+                <md-nav-item md-nav-sref="branden-skills" name="skills">
                     My Skills
                 </md-nav-item>
             </md-nav-bar>
         </md-content>
     </div>
+    <br />
+    <section>
+        <h2 id="BlawPageHeader">My Skills</h2>
+    </section>
+    <br/>
+    <section>
+        <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">Toggle Skills Intro</button>
+        <hr>
+        <div uib-collapse="vm.isCollapsed">
+            <div id="BlawPageHeader" class="well well-lg">
+                <p>
+                    I believe I have a lot of skills that are useful in today's tech industry. I pride myself in being able to pick up new things quickly and apply them.
+                    That being said, this page is more about my dunking skills than my tech skills. Enjoy three videos of me doing my best Michael Jordan impression!
+                </p>
+            </div>
+        </div>
+    </section>
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">My Skills</h2>
+        </div>
+    </md-toolbar>
+    <md-content flex="" layout-padding="">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <vjs-video-container vjs-ratio="640:264">
+                        <video class="video-js vjs-default-skin" width="100" height="100"
+                               controls preload="auto">
+                            <!--Wanted to bind src using vm but does not work-->
+                            <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/10493448_10152516260488612_841308495_n.mp4" type='video/mp4' />
+                        </video>
+                    </vjs-video-container>
+                </div>
+                <div class="col-lg-4">
+                    <vjs-video-container vjs-ratio="640:264">
+                        <video class="video-js vjs-default-skin" width="100" height="100"
+                               controls preload="auto">
+                            <!--Wanted to bind src using vm but does not work-->
+                            <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/12433793_1944005145825611_212069612_n.mp4" type='video/mp4' />
+                        </video>
+                    </vjs-video-container>
+                </div>
+                <div class="col-lg-4">
+                        <vjs-video-container vjs-ratio="640:264">
+                            <video class="video-js vjs-default-skin" width="100" height="100"
+                                   controls preload="auto">
+                                <!--Wanted to bind src using vm but does not work-->
+                                <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/13220422_635775746588857_1223229510_n.mp4" type='video/mp4' />
+                            </video>
+                        </vjs-video-container>
+                    </div>
+                <hr/>
+            </div>    
+        </div>
+    </md-content>
     <br />
  </body>
 </html>

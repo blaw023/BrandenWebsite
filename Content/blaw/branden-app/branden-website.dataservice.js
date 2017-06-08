@@ -9,7 +9,8 @@
 
             getImages : getImages,
             getBooks : getBooks,
-            getInvestments : getInvestments
+            getInvestments : getInvestments,
+            getSkillsVideos : getSkillsVideos
         }
 
         return service;
@@ -20,8 +21,8 @@
             var baseurl = 'http://localhost:2713/';
 
             return $http.get(baseurl + 'api/homepage/getImages')
-                .then(ImageResponseSuccess)
-                .catch(ImageResponseError)          
+                .then(ResponseSuccess)
+                .catch(ResponseError);         
         }
 
         function getBooks()
@@ -29,8 +30,8 @@
             var baseurl = 'http://localhost:2713/';
 
             return $http.get(baseurl + 'api/books/getBooks')
-                .then(ImageResponseSuccess)
-                .catch(ImageResponseError)
+                .then(ResponseSuccess)
+                .catch(ResponseError);
         }
 
         function getInvestments()
@@ -38,16 +39,25 @@
             var baseurl = 'http://localhost:2713/';
 
             return $http.get(baseurl + 'api/investments/getInvestments')
-                .then(ImageResponseSuccess)
-                .catch(ImageResponseError)
+                .then(ResponseSuccess)
+                .catch(ResponseError);
         }
 
-        function ImageResponseSuccess(response)
+        function getSkillsVideos()
+        {
+            var baseurl = 'http://localhost:2713/';
+
+            return $http.get(baseurl + 'api/skills/getSkillsVideos')
+                .then(ResponseSuccess)
+                .catch(ResponseError);
+        }
+
+        function ResponseSuccess(response)
         {
             return response.data;
         }
 
-        function ImageResponseError(error)
+        function ResponseError(error)
         {
             return $q.reject(error);
         }

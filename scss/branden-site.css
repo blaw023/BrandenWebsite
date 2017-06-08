@@ -13,7 +13,7 @@
   background-color: white; }
 
 #BlawPageHeader {
-  color: #286090;
+  color: #FFFFFF;
   font-family: 'Comic Sans MS', cursive, sans-serif; }
 
 #brandenheader {
@@ -33,13 +33,12 @@ img {
 
 td, p, h3 {
   color: #000000;
-  font-family: Centaur, cursive, sans-serif; }
+  font-family: "Trebuchet MS", Helvetica, sans-serif; }
 
-/*p{
-    font-family: Centaur, cursive, sans-serif;
-}
+.wrapper {
+  text-align: center;
+  margin-top: 20%; }
 
-h3{
-    font-family: Centaur, cursive, sans-serif;
-}*/
+.button {
+  position: absolute; }
 
