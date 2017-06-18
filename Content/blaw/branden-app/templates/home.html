@@ -31,11 +31,11 @@
                 <!--Content-->
                 <section ng-show="vm.showAboutMe">
                     <div class="wrapper">
-                        <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">About Branden Lawrence</button>
+                        <button type="button" ng-hide="vm.hideButton" class="btn btn-default" ng-click="vm.showContent()">About Branden Lawrence</button>
                     </div>
                     <p></p>
-                    <div uib-collapse="vm.isCollapsed">
-                        <div class="form-group row well well-lg">
+                    <div uib-collapse="vm.hideContent">
+                        <div class="form-group row well well-lg" id="backgroundContent">
                             <div class="col-md-12" id="brandenCarousel">
                                 <div class="col-md-3">
                                     <div style="height:175px; width:175px;">
@@ -46,13 +46,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <div id="aboutMe">
-                                        <p>Hi! I'm Branden Lawrence and welcome to my site. I'm a junior application developer currently residing in Connecticut with hopes of moving to the Big Apple. 
+                                        <p>
+                                            Hi! I'm Branden Lawrence and welcome to my site. I'm a junior application developer currently residing in Connecticut with hopes of moving to the Big Apple.
                                             I 100% love what I get to do and the freedom I have to do it. I made my personal site mainly so I can fine tune some of my programming skills and also have a little fun!
                                             Programming is something I hated at first because it was just hard.
-                                            But dedicating time and using my ability to learn quickly, I feel like I have opened the door on the many things not only programming
-                                            but Computer Science has to offer. 
+                                            But dedicating time and using my ability to learn quickly, I feel like I have opened the door on the many things that not only programming
+                                            but Computer Science has to offer.
+                                         
                                            </p>
 
                                         <p>
@@ -65,21 +67,32 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-1" style="text-align:right">
+                                    <div class="row">
+                                        <a ng-click="vm.closeContent()" class="btn btn-default" id="closeColor">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <hr/>
                                     <div class="row">
                                         <a ng-href="{{vm.linkedln}}" class="btn btn-default" target="_blank">
                                             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
                                         </a>
-
+                                    </div>
+                                    <hr />
+                                    <div class="row">
                                         <a ng-href="{{vm.twitter}}" class="btn btn-default" target="_blank">
                                             <i class="fa fa-twitter" aria-hidden="true"></i>
                                         </a>
                                     </div>
+                                    <hr />
                                     <div class="row">
                                         <a ng-href="{{vm.instagram}}" class="btn btn-default" target="_blank">
                                             <i class="fa fa-instagram" aria-hidden="true"></i>
                                         </a>
-
+                                    </div>
+                                    <hr />
+                                    <div class="row">
                                         <a ng-href="{{vm.github}}" class="btn btn-default" target="_blank">
                                             <i class="fa fa-github-square" aria-hidden="true"></i>
                                         </a>
