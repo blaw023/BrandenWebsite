@@ -2,7 +2,7 @@
 using System.Linq;
 using Blaw_Website.BlawEntityFramework.DBContext;
 using Blaw_Website.BlawEntityFramework.Models;
-
+using System;
 
 namespace Blaw_Website.BlawWebApi.Repositories
 {
@@ -34,6 +34,13 @@ namespace Blaw_Website.BlawWebApi.Repositories
 
             return booksQuery;
           
+        }
+
+        public IList<BooksSearch> RetrieveBooksUrl()
+        {      
+          var content = bl_context.BooksSearch.Select(x => x).ToList();
+
+          return content;
         }
 
     }
