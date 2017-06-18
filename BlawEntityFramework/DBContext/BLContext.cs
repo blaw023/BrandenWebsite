@@ -26,6 +26,7 @@ namespace Blaw_Website.BlawEntityFramework.DBContext
             modelBuilder.Configurations.Add<BookReview>(new BookReviewMapping());
             modelBuilder.Configurations.Add<Investments>(new InvestmentsMapping());
             modelBuilder.Configurations.Add<Skills>(new SkillsMapping());
+            modelBuilder.Configurations.Add<BooksSearch>(new BooksSearchMapping());
 
         }
 
@@ -34,6 +35,7 @@ namespace Blaw_Website.BlawEntityFramework.DBContext
         public DbSet<BookReview> BookReview { get; set; }
         public DbSet<Investments> Investments { get; set; }
         public DbSet<Skills> Skills { get; set; }
+        public DbSet<BooksSearch> BooksSearch { get; set; }
 
     }
 }

@@ -29,5 +29,14 @@ namespace Blaw_Website.BlawWebApi.Controllers
 
 
         }
+
+        [HttpGet, Route("getBooksSearchUrl")]
+        public HttpResponseMessage getBooksSearchUrl()
+        {
+            BooksRepository br = new BooksRepository(context);
+            IList<BooksSearch> booksSearch = br.RetrieveBooksUrl();
+
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, booksSearch);
+        }
     }
 }

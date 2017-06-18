@@ -17,12 +17,16 @@
 
         vm.isCollapsed = true;
         vm.showAboutMe = true;
+        vm.hideButton = false;
+        vm.hideContent = true;
                 
         //angular material
         vm.currentNavItem = "home";
        
         //functions
         vm.setImageId = setImageId;
+        vm.closeContent = closeContent;
+        vm.showContent = showContent;
         
         activate();
 
@@ -41,6 +45,21 @@
             {
                 vm.images[i].imageId = vm.images[i].imageId - 1;
             }
+        }
+
+        function showContent() {
+            vm.hideContent = false;
+            vm.hideButton = true;
+
+        }
+
+        /**
+        *Function called when close button is clicked
+        */
+        function closeContent()
+        {
+            vm.hideContent = true;
+            vm.hideButton = false;
         }
         
     }
