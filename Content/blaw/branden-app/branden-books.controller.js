@@ -1,24 +1,29 @@
 ﻿(function (angular) {
 
     angular.module('branden-site.module')
-            .controller('branden-books.controller', ['books', BrandenBooksController])
+            .controller('branden-books.controller', ['books', 'booksSearch', BrandenBooksController])
 
 
-    function BrandenBooksController(books) {
+    function BrandenBooksController(books, booksSearch) {
         var vm = this;
 
         //variables
         vm.books = books;
+        vm.booksSearch = booksSearch;
         vm.isCollapsed = false;
         vm.isReview = false;
         vm.isBooksList = true;
-        vm.currentBook = [];
-        vm.currentNavItem = "books";
+        vm.currentBookUrl = null;
         vm.isReadOnly = true;
-        
 
+        vm.currentBook = [];
+        vm.bookUrlDict = new Map();
+        
+        vm.currentNavItem = "books";
+        
         //functions
         vm.showReview = showReview;
+        vm.setBookDict = setBookDict;
         vm.goBackToBooks = goBackToBooks;
         vm.setRating = setRating;
 
@@ -27,7 +32,7 @@
 
         function activate()
         {
-            setRating();
+            setRating();          
         }
 
         ///<summary>
@@ -36,8 +41,19 @@
         function showReview(book)
         {
             vm.currentBook = book;
+            vm.currentBookUrl = vm.bookUrlDict.get(vm.currentBook.bookCode);
             vm.isReview = true;
             vm.isBooksList = false;
+        }
+
+        /**
+        *Sets the book url values from array into dictionary
+        */
+        function setBookDict()
+        {
+            vm.booksSearch.forEach(function(book){
+                vm.bookUrlDict.set(book.bookCode, book.bookUrl);
+            });
         }
 
         ///<summary>
@@ -57,7 +73,10 @@
             vm.books.forEach(function (book) {
                 book.rating = book.bookReviewRating;
             });
+
+            setBookDict();
         }
+
     }
 
 

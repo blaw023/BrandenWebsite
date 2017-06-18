@@ -56,6 +56,11 @@
 					'branden-site.dataservice', function (service) {
 						return service.getBooks();
 					}
+				],
+				booksSearch: [
+                    'branden-site.dataservice', function (service) {
+                        return service.getBooksSearchUrl();
+                    }
 				]
 			}
 		});

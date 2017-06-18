@@ -9,6 +9,7 @@
 
             getImages : getImages,
             getBooks : getBooks,
+            getBooksSearchUrl : getBooksSearchUrl,
             getInvestments : getInvestments,
             getSkillsVideos : getSkillsVideos
         }
@@ -25,6 +26,13 @@
         function getBooks()
         {
             return $http.get(config.apiUrl + 'api/books/getBooks')
+                .then(ResponseSuccess)
+                .catch(ResponseError);
+        }
+
+        function getBooksSearchUrl()
+        {
+            return $http.get(config.apiUrl + 'api/books/getBooksSearchUrl')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }
