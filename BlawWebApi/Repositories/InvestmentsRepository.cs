@@ -17,7 +17,7 @@ namespace Blaw_Website.BlawWebApi.Repositories
         public IList<Investments> GetInvestments()
         {
             
-            var investments = blContext.Investments.Select(x => x).OrderBy(x => x.dateCompleted).ToList();
+            var investments = blContext.Investments.Select(x => x).OrderBy(x => x.DateCompleted).ToList();
 
             return investments;
         }
