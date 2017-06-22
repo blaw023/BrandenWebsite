@@ -9,10 +9,10 @@ namespace Blaw_Website.BlawEntityFramework.EntityMappings
         {
             this.ToTable("book_reviews");
 
-            this.HasKey(e => e.bookCode);
+            this.HasKey(e => e.BookCode);
 
-            this.Property(e => e.bookCode).HasColumnName("Book_Code");
-            this.Property(e => e.bookReview).HasColumnName("Book_Review");
+            this.Property(e => e.BookCode).HasColumnName("Book_Code");
+            this.Property(e => e.BookReviewDesc).HasColumnName("Book_Review");
         }
     }
 }
