@@ -1,0 +1,113 @@
+﻿<html>
+
+<head>
+
+    <link rel="import" href="../../../../home-index.html" />
+    <link rel="icon" href="~/Images/sit_icon.ico" />
+    <title>Branden Lawrence</title>
+</head>
+
+<body ng-app="branden-site.module">
+    <div class="container">
+        <div ui-view>
+            <div ng-cloak="" class="brandenNavBar" layout="row" layout-align="end center">
+                <md-content class="md-padding">
+                    <md-nav-bar md-selected-nav-item="vm.currentNavItem"
+                                nav-bar-aria-label="navigation links">
+                        <md-nav-item md-nav-sref="home" name="home">
+                            Home
+                        </md-nav-item>
+                        <md-nav-item md-nav-sref="branden-books" name="books">
+                            My Books
+                        </md-nav-item>
+                        <md-nav-item md-nav-sref="branden-investments" name="investments">
+                            My Investments
+                        </md-nav-item>
+                        <md-nav-item md-nav-sref="branden-skills" name="skills">
+                            My Skills
+                        </md-nav-item>
+                    </md-nav-bar>
+                </md-content>
+            </div>
+            <!--Content-->
+            <section ng-show="vm.showAboutMe">
+                <div class="wrapper">
+                    <button type="button" ng-hide="vm.hideButton" class="btn btn-default" ng-click="vm.showContent()">About Branden Lawrence</button>
+                </div>
+                <p></p>
+                <div uib-collapse="vm.hideContent">
+                    <div class="form-group row well well-lg" id="backgroundContent">
+                        <div class="col-md-12" id="brandenCarousel">
+                            <div class="col-md-3">
+                                <div style="height:175px; width:175px;">
+                                    <div uib-carousel active="vm.activeSlide" interval="vm.myInterval">
+                                        <div uib-slide ng-repeat="slide in vm.images" index="slide.ImageId">
+                                            <img ng-src="{{slide.Image}}" style="margin:auto; height:175px; width:165px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="aboutMe">
+                                    <p>
+                                        Hi! I'm Branden Lawrence and welcome to my site. I'm a junior application developer currently residing in Connecticut with hopes of moving to the Big Apple.
+                                        I 100% love what I get to do and the freedom I have to do it. I made my personal site mainly so I can fine tune some of my programming skills and also have a little fun!
+                                        Programming is something I hated at first because it was just hard.
+                                        But dedicating time and using my ability to learn quickly, I feel like I have opened the door on the many things that not only programming
+                                        but Computer Science has to offer.
+
+                                    </p>
+
+                                    <p>
+                                        So far in my short career I have been able to be a major part in building my company's new portal for Employer/Brokers. This has taught me a considerate amout and overall has helped me become a much better programmer.
+                                        Being apart of various projects has improved my soft skills and other major character pieces as well. I fully believe there is no way other way to go than up from here.
+                                    </p>
+                                    <p>
+                                        I have many other interests other than programming. This simple personal site will let you know a little bit more about me and what I have a passion for. (Other than my beautiful girlfriend in the slides).
+                                        Enjoy!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="text-align:right">
+                                <div class="row">
+                                    <a ng-click="vm.closeContent()" class="btn btn-default" id="closeColor">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <a ng-href="{{vm.linkedln}}" class="btn btn-default" target="_blank">
+                                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <a ng-href="{{vm.twitter}}" class="btn btn-default" target="_blank">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <a ng-href="{{vm.instagram}}" class="btn btn-default" target="_blank">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <a ng-href="{{vm.github}}" class="btn btn-default" target="_blank">
+                                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </section>
+            <!--Buffering sign on page load-->
+            <md-progress-linear class="wrapper" md-mode="intermediate" ng-disabled="vm.showAboutMe"> </md-progress-linear>
+        </div>
+    </div>
+</body>
+</html>
+

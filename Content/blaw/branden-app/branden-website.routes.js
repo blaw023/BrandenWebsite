@@ -1,8 +1,8 @@
 ﻿	angular.module('branden-site.module')
-		.config(routeConfig)
-		.run(function($rootScope) {
-			 $rootScope.$on("$stateChangeError", console.log.bind(console));
-		});
+		.config(routeConfig);
+		//.run(function($rootScope) {
+		//	 $rootScope.$on("$stateChangeError", console.log.bind(console));
+		//});
 
 	function routeConfig($urlRouterProvider, $stateProvider){
 		
@@ -10,10 +10,10 @@
 
 		$stateProvider.state('home', {
 			url: '/',
-			templateUrl: 'home.html',
+			templateUrl: 'Content/blaw/branden-app/templates/home.html',
 			controller: 'branden-home.controller as vm',
 			resolve: {
-				images: [
+				Images: [
 					'branden-site.dataservice', function(service) {
 						return service.getImages();
 					}
@@ -23,10 +23,10 @@
 
 		$stateProvider.state('branden-skills', {
 			url: '/skills',
-			templateUrl: 'skills.html',
+			templateUrl: 'Content/blaw/branden-app/templates/skills.html',
 			controller: 'branden-skills.controller as vm',
             resolve: {
-                skillsVideos: [
+                SkillsVideos: [
                     'branden-site.dataservice', function (service) {
                         return service.getSkillsVideos();
                     }
@@ -36,10 +36,10 @@
 
 		$stateProvider.state('branden-investments', {
 			url: '/investments',
-			templateUrl: 'investments.html',
+			templateUrl: 'Content/blaw/branden-app/templates/investments.html',
 			controller: 'branden-investments.controller as vm',
 			resolve: {
-				investmentList: [
+				InvestmentList: [
 					'branden-site.dataservice', function (service) {
 						return service.getInvestments();
 					}
@@ -49,15 +49,15 @@
 
 		$stateProvider.state('branden-books', {
 			url: '/books',
-			templateUrl: 'branden-books.html',
+			templateUrl: 'Content/blaw/branden-app/templates/branden-books.html',
 			controller: 'branden-books.controller as vm',
 			resolve: {			
-				books: [
+				Books: [
 					'branden-site.dataservice', function (service) {
 						return service.getBooks();
 					}
 				],
-				booksSearch: [
+				BooksSearch: [
                     'branden-site.dataservice', function (service) {
                         return service.getBooksSearchUrl();
                     }

@@ -18,35 +18,35 @@
 
         function getImages()
         {
-            return $http.get(config.apiUrl + 'api/homepage/getImages')
+            return $http.get(config.prodApiUrl + 'api/homepage/getImages')
                 .then(ResponseSuccess)
                 .catch(ResponseError);         
         }
 
         function getBooks()
         {
-            return $http.get(config.apiUrl + 'api/books/getBooks')
+            return $http.get(config.prodApiUrl + 'api/books/getBooks')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }
 
         function getBooksSearchUrl()
         {
-            return $http.get(config.apiUrl + 'api/books/getBooksSearchUrl')
+            return $http.get(config.prodApiUrl + 'api/books/getBooksSearchUrl')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }
 
         function getInvestments()
         {
-            return $http.get(config.apiUrl + 'api/investments/getInvestments')
+            return $http.get(config.prodApiUrl + 'api/investments/getInvestments')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }
 
         function getSkillsVideos()
         {
-            return $http.get(config.apiUrl + 'api/skills/getSkillsVideos')
+            return $http.get(config.prodApiUrl + 'api/skills/getSkillsVideos')
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }

@@ -6,9 +6,12 @@ using Blaw_Website.BlawEntityFramework.DBContext;
 using Blaw_Website.BlawEntityFramework.Models;
 using Blaw_Website.BlawWebApi.Repositories;
 using System.Linq;
+using System.Web.Http.Cors;
+
 
 namespace Blaw_Website.BlawWebApi.Controllers
 {
+    [EnableCors(origins:"*", headers:"*", methods:"*")]
     [RoutePrefix("api/books")]
     public class BooksController : ApiController
     {

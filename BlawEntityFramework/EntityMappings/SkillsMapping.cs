@@ -9,9 +9,9 @@ namespace Blaw_Website.BlawEntityFramework.EntityMappings
         {
             this.ToTable("site_videos");
 
-            this.Property(e => e.id).HasColumnName("Id");
-            this.Property(e => e.videoSource).HasColumnName("Video_Source");
-            this.Property(e => e.videoType).HasColumnName("Video_Type");
+            this.Property(e => e.Id).HasColumnName("Id");
+            this.Property(e => e.VideoSource).HasColumnName("Video_Source");
+            this.Property(e => e.VideoType).HasColumnName("Video_Type");
         }
     }
 }

@@ -8,10 +8,10 @@ namespace Blaw_Website.BlawEntityFramework.Models
     public class BooksSearch
     {
        
-        public string bookName { get; set; }
+        public string BookName { get; set; }
 
-        public int bookCode { get; set; }
+        public int BookCode { get; set; }
 
-        public string bookUrl { get; set; }
+        public string BookUrl { get; set; }
     }
 }

@@ -7,17 +7,17 @@ namespace Blaw_Website.BlawEntityFramework.Models
 {
     public class Investments
     {
-        public int investmentId { get; set; }
+        public int InvestmentId { get; set; }
 
-        public string accountName { get; set; }
+        public string AccountName { get; set; }
 
-        public string transactionDescription { get; set; }
+        public string TransactionDescription { get; set; }
 
-        public double amountDeposited { get; set; }
+        public double AmountDeposited { get; set; }
 
-        public double endingBalance { get; set; }
+        public double EndingBalance { get; set; }
 
-        public DateTime? dateCompleted { get; set; }
+        public DateTime? DateCompleted { get; set; }
 
 
     }

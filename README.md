@@ -1,6 +1,6 @@
 # BrandenWebsite
 
-Hi! Welcome to my personal website. This is version 1.1.
+Hi! Welcome to my personal website. This is version 1.2. (Production Code)
 
 ----------------------------------------------------------
 
@@ -24,4 +24,11 @@ Branden Entity Framework
 -----------------------------------------
 -Entity Models, Mappings, Connections
 
+Controllers
+--------------
+-MVC controller
+
+Views
+--------------
+-cshtml file for page load.
 

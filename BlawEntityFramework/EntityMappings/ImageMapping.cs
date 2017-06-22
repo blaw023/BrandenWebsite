@@ -9,11 +9,11 @@ namespace Blaw_Website.BlawEntityFramework.EntityMappings
         {
             this.ToTable("site_images");
 
-            this.HasKey(e => e.imageId);
+            this.HasKey(e => e.ImageId);
 
-            this.Property(e => e.imageId).HasColumnName("image_id");
-            this.Property(e => e.image).HasColumnName("image");
-            this.Property(e => e.pageIdentifier).HasColumnName("page_identifier");
+            this.Property(e => e.ImageId).HasColumnName("image_id");
+            this.Property(e => e.Image).HasColumnName("image");
+            this.Property(e => e.PageIdentifier).HasColumnName("page_identifier");
         }
     }
 }

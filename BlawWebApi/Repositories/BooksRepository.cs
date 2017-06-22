@@ -19,17 +19,17 @@ namespace Blaw_Website.BlawWebApi.Repositories
         public IQueryable RetrieveBooks()
         {
             var booksQuery = bl_context.Books.Join(bl_context.BookReview,
-                a => a.bookCode,
-                b => b.bookCode,
+                a => a.BookCode,
+                b => b.BookCode,
                 (a, b) => new
                 {
-                    a.author,
-                    a.bookCode,
-                    a.bookImage,
-                    a.bookName,
-                    a.bookReviewRating,
-                    a.bookSynopsis,
-                    b.bookReview
+                    a.Author,
+                    a.BookCode,
+                    a.BookImage,
+                    a.BookName,
+                    a.BookReviewRating,
+                    a.BookSynopsis,
+                    b.BookReviewDesc
                 }).AsQueryable();
 
             return booksQuery;

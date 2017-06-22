@@ -1,20 +1,20 @@
 ﻿(function (angular) {
 
     angular.module('branden-site.module')
-            .controller('branden-investments.controller',['investmentList', 'TransactionType', InvestmentsController])
+            .controller('branden-investments.controller',['InvestmentList', 'TransactionType', InvestmentsController])
 
-    function InvestmentsController(investmentList, TransactionType) {
+    function InvestmentsController(InvestmentList, TransactionType) {
         var vm = this;
 
         //variables
-        vm.investmentTransactions = investmentList;
+        vm.investmentTransactions = InvestmentList;
         vm.labels = [];
         vm.series = [];
         vm.investmentData = [];
         vm.options = [];
         vm.investmentDataOverride = [];
-        vm.subjectA = vm.investmentTransactions[0].accountName;
-        vm.subjectB = vm.investmentTransactions[1].accountName;
+        vm.subjectA = vm.investmentTransactions[0].AccountName;
+        vm.subjectB = vm.investmentTransactions[1].AccountName;
 
         //angular material
         vm.currentNavItem = 'investments';
@@ -22,9 +22,10 @@
 
         //functions
         vm.createInvestmentGraph = createInvestmentGraph;
-        vm.chartClick = chartClick;
 
         activate();
+
+        //////////////////////////
 
         function activate() {
             createInvestmentGraph();
@@ -39,12 +40,12 @@
             var subjectAData = [];
             var subjectBData = [];
             for (var i = 0; i < vm.investmentTransactions.length; i++) {
-                if (vm.investmentTransactions[i].accountName == TransactionType.Roth) {
-                    subjectAData.push(vm.investmentTransactions[i].endingBalance);
+                if (vm.investmentTransactions[i].AccountName == TransactionType.Roth) {
+                    subjectAData.push(vm.investmentTransactions[i].EndingBalance);
                 }
                 else
                 {
-                    subjectBData.push(vm.investmentTransactions[i].endingBalance);
+                    subjectBData.push(vm.investmentTransactions[i].EndingBalance);
                 }
             }
 
@@ -71,14 +72,6 @@
                 }
             };
         }
-
-        //Not needed?
-        function chartClick(points, evt) {
-            console.log(points, evt);
-        }
     }
-
-
-
 
 }(angular));

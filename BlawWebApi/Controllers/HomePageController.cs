@@ -5,11 +5,13 @@ using System.Web.Http;
 using Blaw_Website.BlawEntityFramework.DBContext;
 using Blaw_Website.BlawEntityFramework.Models;
 using Blaw_Website.BlawWebApi.Repositories;
+using System.Web.Http.Cors;
 
 
 namespace Blaw_Website.BlawWebApi.Controllers
 {
     [RoutePrefix("api/homepage")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class HomePageController : ApiController
     {
         private BLContext context;

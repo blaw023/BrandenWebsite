@@ -7,10 +7,10 @@ namespace Blaw_Website.BlawEntityFramework.Models
 {
     public class Skills
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string videoSource { get; set; }
+        public string VideoSource { get; set; }
 
-        public string videoType { get; set; }
+        public string VideoType { get; set; }
     }
 }

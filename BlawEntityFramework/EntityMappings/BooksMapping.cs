@@ -10,14 +10,14 @@ namespace Blaw_Website.BlawEntityFramework.EntityMappings
         {
             this.ToTable("branden.books");
 
-            this.HasKey(e => e.bookName);
+            this.HasKey(e => e.BookName);
 
-            this.Property(e => e.author).HasColumnName("Author");
-            this.Property(e => e.bookName).HasColumnName("Book_Name");
-            this.Property(e => e.bookCode).HasColumnName("Book_Code");
-            this.Property(e => e.bookReviewRating).HasColumnName("Book_Review_Rating");
-            this.Property(e => e.bookSynopsis).HasColumnName("Book_Synopsis");
-            this.Property(e => e.bookImage).HasColumnName("Book_Image");
+            this.Property(e => e.Author).HasColumnName("Author");
+            this.Property(e => e.BookName).HasColumnName("Book_Name");
+            this.Property(e => e.BookCode).HasColumnName("Book_Code");
+            this.Property(e => e.BookReviewRating).HasColumnName("Book_Review_Rating");
+            this.Property(e => e.BookSynopsis).HasColumnName("Book_Synopsis");
+            this.Property(e => e.BookImage).HasColumnName("Book_Image");
         }
     }
 }
