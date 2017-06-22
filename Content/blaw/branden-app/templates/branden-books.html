@@ -62,18 +62,18 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="book in vm.books">
-                        <td width="15%">{{book.author}}
+                        <td width="15%">{{book.Author}}
                         <td width="15%">
-                            <a href="" ng-click="vm.showReview(book)">{{book.bookName}}</a>
+                            <a href="" ng-click="vm.showReview(book)">{{book.BookName}}</a>
                         </td>
                         <td width="18%">
-                            <img ng-src="{{book.bookImage}}" alt="Picture" />
+                            <img ng-src="{{book.BookImage}}" alt="Picture" />
                         </td>
-                        <td width="7%">{{book.bookCode}}</td>
+                        <td width="7%">{{book.BookCode}}</td>
                         <td width="10%">
-                            <span uib-rating ng-model="book.rating" read-only="vm.isReadOnly"></span>
+                            <span uib-rating ng-model="book.Rating" read-only="vm.isReadOnly"></span>
                         </td>
-                        <td width="35%">{{book.bookSynopsis}}</td>
+                        <td width="35%">{{book.BookSynopsis}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -90,7 +90,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <h3><u>Author</u></h3>
-                    <p>{{vm.currentBook.author}}</p>
+                    <p>{{vm.currentBook.Author}}</p>
                 </div>             
             </div>
             <hr />
@@ -98,7 +98,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <h3><u>Book Name</u></h3>
-                    <p>{{vm.currentBook.bookName}}</p>
+                    <p>{{vm.currentBook.BookName}}</p>
                 </div>
             </div>
             <hr />
@@ -106,7 +106,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <h3><u>Book Review</u></h3>
-                    <p>{{vm.currentBook.bookReview}}</p>
+                    <p>{{vm.currentBook.BookReviewDesc}}</p>
                 </div>
             </div>
             <hr />

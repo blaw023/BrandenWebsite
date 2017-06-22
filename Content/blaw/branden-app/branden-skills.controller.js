@@ -1,13 +1,13 @@
 ﻿(function (angular) {
 
     angular.module('branden-site.module')
-            .controller('branden-skills.controller', ['skillsVideos', SkillsController])
+            .controller('branden-skills.controller', ['SkillsVideos', SkillsController])
 
 
-    function SkillsController(skillsVideos) {
+    function SkillsController(SkillsVideos) {
         var vm = this;
       
-        vm.skillsVideos = skillsVideos;
+        vm.skillsVideos = SkillsVideos;
         vm.isCollapsed = false;
         
 

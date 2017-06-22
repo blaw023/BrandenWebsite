@@ -1,13 +1,13 @@
 ﻿(function (angular) {
 
     angular.module('branden-site.module')
-            .controller('branden-home.controller',['$state', 'SocialMedia', 'branden-site.dataservice', 'images', '$location', '$window', BrandenHomeController])
+            .controller('branden-home.controller',['$state', 'SocialMedia', 'branden-site.dataservice', 'Images', '$location', '$window', BrandenHomeController])
 
-    function BrandenHomeController($state, SocialMedia, service, images, $location, $window) {     
+    function BrandenHomeController($state, SocialMedia, service, Images, $location, $window) {     
         var vm = this;
      
         //variables
-        vm.images = images;
+        vm.images = Images;
         vm.myInterval = 3000;
         vm.activeSlide = 0;
         vm.linkedln = SocialMedia.Linkedln;
@@ -43,7 +43,7 @@
         {
             for(var i = 0; i < vm.images.length; i++)
             {
-                vm.images[i].imageId = vm.images[i].imageId - 1;
+                vm.images[i].ImageId = vm.images[i].ImageId - 1;
             }
         }
 

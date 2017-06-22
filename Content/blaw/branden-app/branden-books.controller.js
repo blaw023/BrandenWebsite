@@ -1,15 +1,15 @@
 ﻿(function (angular) {
 
     angular.module('branden-site.module')
-            .controller('branden-books.controller', ['books', 'booksSearch', BrandenBooksController])
+            .controller('branden-books.controller', ['Books', 'BooksSearch', BrandenBooksController])
 
 
-    function BrandenBooksController(books, booksSearch) {
+    function BrandenBooksController(Books, BooksSearch) {
         var vm = this;
 
         //variables
-        vm.books = books;
-        vm.booksSearch = booksSearch;
+        vm.books = Books;
+        vm.booksSearch = BooksSearch;
         vm.isCollapsed = false;
         vm.isReview = false;
         vm.isBooksList = true;
@@ -41,7 +41,7 @@
         function showReview(book)
         {
             vm.currentBook = book;
-            vm.currentBookUrl = vm.bookUrlDict.get(vm.currentBook.bookCode);
+            vm.currentBookUrl = vm.bookUrlDict.get(vm.currentBook.BookCode);
             vm.isReview = true;
             vm.isBooksList = false;
         }
@@ -52,7 +52,7 @@
         function setBookDict()
         {
             vm.booksSearch.forEach(function(book){
-                vm.bookUrlDict.set(book.bookCode, book.bookUrl);
+                vm.bookUrlDict.set(book.BookCode, book.BookUrl);
             });
         }
 
@@ -71,7 +71,7 @@
         function setRating()
         {
             vm.books.forEach(function (book) {
-                book.rating = book.bookReviewRating;
+                book.Rating = book.BookReviewRating;
             });
 
             setBookDict();
