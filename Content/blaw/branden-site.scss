@@ -1,4 +1,6 @@
-﻿body{
+﻿@charset "UTF-8";
+
+body{
     display: table;
     position: relative;
     width: 100%;
@@ -8,6 +10,35 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+
+img{
+    width:100px;
+    height:100px;
+}
+
+
+.brandenNavBar md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0;
+  
+}
+
+td, p, h3{
+    color: #000000;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.wrapper{
+    text-align:center;
+    margin-top: 15%;
+}
+
+.button{
+    position: absolute;
+    
 }
 
 #brandenNav{
@@ -31,33 +62,7 @@
     color: #286090;
 }
 
-img{
-    width:100px;
-    height:100px;
-}
-
 #closeColor{
     background-color: rgba(128, 128, 128, .6)
 }
 
-.brandenNavBar md-content .ext-content {
-  padding: 50px;
-  margin: 20px;
-  background-color: #FFF2E0;
-  
-}
-
-td, p, h3{
-    color: #000000;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-.wrapper{
-    text-align:center;
-    margin-top: 15%;
-}
-
-.button{
-    position: absolute;
-    
-}
