@@ -49,7 +49,7 @@
                 }
             }
 
-            vm.labels = ['Oct. 16', 'Nov. 16', 'Dec. 16', 'Jan. 17', 'Feb. 17', 'Mar. 17', 'Apr. 17', 'May 17'];
+            vm.labels = ['Jan. 17', 'Feb. 17', 'Mar. 17', 'Apr. 17', 'May 17', 'Jun. 17', 'Jul. 17', 'Aug. 17'];
             vm.series = [vm.subjectA, vm.subjectB];
             vm.investmentData = [subjectAData, subjectBData];
             vm.investmentDataOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];

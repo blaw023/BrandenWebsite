@@ -1,6 +1,6 @@
 # BrandenWebsite
 
-Hi! Welcome to my personal website. This is version 1.2. (Production Code)
+Hi! Welcome to my personal website. This is version 1.3. (Production Code)
 
 ----------------------------------------------------------
 
@@ -10,11 +10,12 @@ Folder Structure
 Content/Blaw
 --------------------------------------------------
 
-branden-app (Site Pages)
---Home Page
---Books Page
---Investment Page
---My Skills Page
+branden-app (Site Pages)<br/>
+--Home Page<br/>
+--Books Page<br/>
+--Investment Page<br/>
+--My Skills Page<br/>
+--Sports Dashboard
 
 Branden WebApi
 -----------------------------------------

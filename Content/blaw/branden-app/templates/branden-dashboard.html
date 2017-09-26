@@ -1,0 +1,237 @@
+﻿<html>
+<body>
+    <div ng-cloak="" class="brandenNavBar" layout="row" layout-align="end center">
+        <md-content class="md-padding">
+            <md-nav-bar md-selected-nav-item="vm.currentNavItem"
+                        nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-sref="home" name="home">
+                    Home
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-books" name="books">
+                    My Books
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-investments" name="investments">
+                    My Investments
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-skills" name="skills">
+                    My Skills
+                </md-nav-item>
+                <md-nav-item md-nav-sref="branden-dashboard" name="dashboard">
+                    My Sports Dashboard
+                </md-nav-item>
+            </md-nav-bar>
+        </md-content>
+    </div>
+    <br />
+    <br />
+    <button id ="hideButton"class="button" ng-click="vm.hideButton()"></button>
+    
+    <!--Sports dashboard-->
+    <section>
+        <div ng-cloak>
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <!--Chelsea-->
+                    <md-tab label="Chelsea Football Club" id="chelseaFC">
+                        <md-content class="md-padding">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <h3>Trophies Won</h3>
+                                        <canvas id="doughnut" class="chart chart-doughnut" width="564" height="362"
+                                                chart-data="vm.chelseaData" chart-labels="vm.label" chart-click="vm.onClick"></canvas>
+                                        <br/>
+                                        <div ng-show="vm.showModal">
+                                            <md-button class="md-primary md-raised" ng-click="vm.showVideo($event)">
+                                                {{vm.buttonText}}
+                                            </md-button>
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <h3>About Chelsea</h3>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <img src="../../../../Images/chelsea.png" class="picChelsea" />
+                                            </div>
+                                        </div>
+                                        <p>
+                                            Located in London, England the Chelsea Blues are one of the top soccer teams in the English Premier League. I started following Chelsea in 2007 and have been faithfully getting up super early on Saturday and Sundays to watch them play.
+                                            From devastating losses to Man United in the Champions League final to the dramatic win in the same competition 4 years later against Bayern Munich, I'm proud of being able to call myself a Blue.
+                                        </p>
+                                        <br />
+                                        <br />
+
+                                        <md-button class="md-primary md-raised" ng-click="vm.showAlert($event)">
+                                            Random Chelsea Facts
+                                        </md-button>
+                                    </div>
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Current Squad</h3>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <td width="20%">Name</td>
+                                                <td width="20%">Position</td>
+                                                <td width="5%">Jersey Number</td>
+                                                <td width="15%">Date of Birth</td>
+                                                <td width="12%">Nationality</td>
+                                                <td width="28%">Contract Until</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="players in vm.chelseaPlayers">
+                                                <td width="15%">{{players.name}}</td>
+                                                <td width="15%">{{players.position}}</td>
+                                                <td width="18%">{{players.jerseyNumber}}</td>
+                                                <td width="7%">{{players.dateOfBirth | date: 'MM/dd/yyyy'}}</td>
+                                                <td width="10%">{{players.nationality}}</td>
+                                                <td width="35%">{{players.contractUntil | date: 'MM/dd/yyyy'}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <!--Uconn-->
+                    <md-tab label="Uconn Huskies Basketball">
+                        <md-content class="md-padding">
+                            <md-grid-list class="uconnHuskiesGridList" md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+                                          md-row-height-gt-md="1:1" md-row-height="2:2"
+                                          md-gutter="12px" md-gutter-gt-sm="8px">
+
+                                <md-grid-tile class="gray"
+                                              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <img class="uconnPlayers img-circle" src="../../../../Images/khalid-el-amin.jpg" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="uconnText">A leader. A warrior. Khalid El-Amin lead Uconn to our first national championship. 
+                                                 I always admired his tenacity against opponents. I will always remember being 6 years old sitting in the front of the TV watching him yell "We shocked the world!"
+                                                 as we upset Duke in the 1999 national championship.<p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <md-button class="md-primary md-raised" ng-click="vm.showStats($event)">
+                                               Show Stats for Khalid El-Amin
+                                            </md-button>
+                                        </div>
+                                    </div>                                   
+                                    <md-grid-tile-footer>
+                                        <h3>Khalid El-Amin</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+
+                                <md-grid-tile class="green"
+                                              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                                    <canvas id="doughnut" class="chart chart-doughnut" width="364" height="182"
+                                            chart-data="vm.data" chart-labels="vm.labels">                                      
+                                    </canvas>
+                                    <md-grid-tile-footer>
+                                        <h3>Uconn Men Accolades</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+
+                                <md-grid-tile class="yellow"
+                                              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <img class="uconnPlayers img-circle" src="../../../../Images/shabazz.jpg" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="uconnText">
+                                                    The little kid with a big heart and will to win. Being an understudy to Kemba helped Shabazz transform into a leader,
+                                                    and just like Kemba did a couple years before, Shabazz lead us to the National Championship and helped Uconn win the 4th championship
+                                                    since 1999. 
+                                                <p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <md-button class="md-primary md-raised" ng-click="vm.showStats($event)">
+                                                Show Stats for Shabazz Napier
+                                            </md-button>
+                                        </div>
+                                    </div>       
+                                    <md-grid-tile-footer>
+                                        <h3>Shabazz Napier</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+
+                                <md-grid-tile class="blue"
+                                              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <img class="uconnPlayers img-circle" src="../../../../Images/kemba walker.jpg" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="uconnText">
+                                                    My favorite player to ever put on a Uconn shirt, Kemba Walker is an absolute warrior. He almost single-handedly
+                                                    carried us to the Big East Championship and then to the National Championship. You can't talk about Uconn basketball
+                                                    without mentioning Kemba Walker. 
+                                                <p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <md-button class="md-primary md-raised" ng-click="vm.showStats($event)">
+                                                Show Stats for Kemba Walker
+                                            </md-button>
+                                        </div>
+                                    </div>       
+                                    <md-grid-tile-footer>
+                                        <h3>Kemba Walker</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+
+                                <md-grid-tile class="red"
+                                              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                                    <canvas id="doughnut" class="chart chart-doughnut" width="364" height="182"
+                                            chart-data="vm.ucwData" chart-labels="vm.ucwLabels"></canvas>
+                                    <md-grid-tile-footer>
+                                        <h3>Uconn Women Accolades</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+
+                                <md-grid-tile class="green"
+                                              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <img class="uconnPlayers img-circle" src="../../../../Images/emeka-okafor.jpg" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="uconnText">
+                                                    Emeka was the model person. He had a 3.95 GPA while dominating games for Uconn. Just seeing the way he played in the post on 
+                                                    offense and defense was a beautiful thing. For this reason and many more, he is why we dominated Georgia Tech in the National Championship.
+                                                <p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <md-button class="md-primary md-raised" ng-click="vm.showStats($event)">
+                                                Show Stats for Emeka Okafor
+                                            </md-button>
+                                        </div>
+                                    </div>    
+                                    <md-grid-tile-footer>
+                                        <h3>Emeka Okafor</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+
+                            </md-grid-list>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+    </section>
+</body>
+</html>

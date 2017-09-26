@@ -11,7 +11,11 @@
             getBooks : getBooks,
             getBooksSearchUrl : getBooksSearchUrl,
             getInvestments : getInvestments,
-            getSkillsVideos : getSkillsVideos
+            getSkillsVideos : getSkillsVideos,
+            getPlayers : getPlayers,
+            getChelseaFacts : getChelseaFacts,
+            getUconnPlayerStats : getUconnPlayerStats,
+            trackUserActivity : trackUserActivity
         }
 
         return service;
@@ -47,6 +51,37 @@
         function getSkillsVideos()
         {
             return $http.get(config.prodApiUrl + 'api/skills/getSkillsVideos')
+                .then(ResponseSuccess)
+                .catch(ResponseError);
+        }
+
+        function getPlayers()
+        {
+            return $http({
+                headers: {'X-Auth-Token': '942057f7594244e9a567edbe36ac46f6'},
+                method: 'GET',
+                url: 'http://api.football-data.org/v1/teams/61/players'
+            }).then(ResponseSuccess)
+              .catch(ResponseError);
+        }
+
+        function getChelseaFacts()
+        {
+            return $http.get(config.prodApiUrl + 'api/dashboard/getChelseaFacts')
+                .then(ResponseSuccess)
+                .catch(ResponseError);
+        }
+
+        function getUconnPlayerStats()
+        {
+            return $http.get(config.prodApiUrl + 'api/dashboard/getUconnPlayerStats')
+                .then(ResponseSuccess)
+                .catch(ResponseError);
+        }
+
+        function trackUserActivity(info)
+        {
+            return $http.post(config.prodApiUrl + 'api/dashboard/postUserActivity', info)
                 .then(ResponseSuccess)
                 .catch(ResponseError);
         }

@@ -27,6 +27,9 @@ namespace Blaw_Website.BlawEntityFramework.DBContext
             modelBuilder.Configurations.Add<Investments>(new InvestmentsMapping());
             modelBuilder.Configurations.Add<Skills>(new SkillsMapping());
             modelBuilder.Configurations.Add<BooksSearch>(new BooksSearchMapping());
+            modelBuilder.Configurations.Add<ChelseaFacts>(new ChelseaFactsMapping());
+            modelBuilder.Configurations.Add<TrackUserActivity>(new TrackUserActivityMapping());
+            modelBuilder.Configurations.Add<UconnStats>(new UconnStatsMapping());
 
         }
 
@@ -36,6 +39,9 @@ namespace Blaw_Website.BlawEntityFramework.DBContext
         public DbSet<Investments> Investments { get; set; }
         public DbSet<Skills> Skills { get; set; }
         public DbSet<BooksSearch> BooksSearch { get; set; }
+        public DbSet<ChelseaFacts> ChelseaFacts { get; set; }
+        public DbSet<TrackUserActivity> TrackUserActivity { get; set; }
+        public DbSet<UconnStats> UconnStats { get; set; }
 
     }
 }

@@ -66,3 +66,44 @@ td, p, h3{
     background-color: rgba(128, 128, 128, .6)
 }
 
+.picChelsea{
+    height: 50px !important;
+    width: 50px !important;
+   
+}
+
+
+/*Section for md-grid on uconn huskies tab*/
+.uconnHuskiesGridList md-grid-list {
+  margin: 8px; }
+
+.uconnHuskiesGridList .gray {
+  background: #f5f5f5; }
+
+.uconnHuskiesGridList .green {
+  background: #b9f6ca; }
+
+.uconnHuskiesGridList .yellow {
+  background: #ffff8d; }
+
+.uconnHuskiesGridList .blue {
+  background: #84ffff; }
+
+.uconnHuskiesGridList .purple {
+  background: #b388ff; }
+
+.uconnHuskiesGridList .red {
+  background: #ff8a80; }
+
+.uconnHuskiesGridList md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+.uconnPlayers{
+   
+    float: left;
+}
+
+.uconnText{
+     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+

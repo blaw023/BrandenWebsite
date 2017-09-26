@@ -1,0 +1,62 @@
+﻿
+    <md-dialog aria-label="Uconn">
+        <form ng-cloak>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Uconn Stats</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="vm.cancel()">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <h3>{{playerStats[0].Name}}</h3>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <td width="15%">Season</td>
+                                <td width="10%">Minutes Per Game</td>
+                                <td width="10%">Free Throw Percentage</td>
+                                <td width="10%">Three Point Percentage</td>
+                                <td width="10%">Field Goal Percentage</td>
+                                <td width="10%">Assists Per Game</td>
+                                <td width="10%">Steals Per Game</td>
+                                <td width="10%">Blocks Per Game</td>
+                                <td width="20%">Points Per Game</td>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="stats in vm.playerStats">
+                                <td width="10%">{{stats.Season}}</td>
+                                <td width="10%">{{stats.MinutesPerGame}}</td>
+                                <td width="10%">{{stats.FreeThrowPercentage}}%</td>
+                                <td width="10%">{{stats.ThreePointPercentage}}%</td>
+                                <td width="10%">{{stats.FieldGoalPercentage}}%</td>
+                                <td width="10%">{{stats.Assists}}</td>
+                                <td width="10%">{{stats.Steals}}</td>
+                                <td width="10%">{{stats.Blocks}}</td>
+                                <td width="10%">{{stats.Points}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <md-button href="https://www.youtube.com/watch?v=ibEnGKlzUPw" target="_blank" md-autofocus>
+                    2011 National Championship Video
+                </md-button>
+                <span flex></span>
+
+                <!--Log this information in database-->
+                <md-button ng-click="vm.answer('1')">
+                    This is cool!
+                </md-button>
+                <md-button ng-click="vm.answer('0')">
+                    You can do better...
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
