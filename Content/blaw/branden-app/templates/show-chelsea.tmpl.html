@@ -1,0 +1,87 @@
+﻿
+    <md-dialog aria-label="Chelsea">
+        <form ng-cloak>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>This is Chelsea</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="something" ng-click="vm.cancel()">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div ng-show="vm.championsLeague">
+                        <p>The biggest trophy a European club can win, Chelsea went into Bayern's own backyard and beat them in a dramatic shootout.</p>
+                        <vjs-video-container vjs-ratio="640:264">
+                            <video class="video-js vjs-default-skin" width="100" height="100"
+                                   controls preload="auto">
+                                <!--Wanted to bind src using vm but does not work-->
+                                <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/Bayern+Munich+vs+Chelsea+1-1+(pen+3-4)+-+UCL+2012+FINAL+-+Full+Highlights+(English+Commentary)+HD.mp4" type="video/mp4" />
+                            </video>
+                        </vjs-video-container>
+                    </div>
+                    <div ng-show="vm.leagueCup">
+                        <p>Our most recent league Cup win vs our bitter rivals in Tottenham in 2015.</p>
+                        <vjs-video-container vjs-ratio="640:264">
+                            <video class="video-js vjs-default-skin" width="100" height="100"
+                                   controls preload="auto">
+                                <!--Wanted to bind src using vm but does not work-->
+                                <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/Chelsea+Vs+Tottenham+2-0+-+All+Goals++Match+Highlights+-+March+1+2015+-+Capital+One+Cup+Final+-+HD.mp4" type='video/mp4' />
+                            </video>
+                        </vjs-video-container>
+                    </div>
+                    <div ng-show="vm.europaLeague">
+                        <p>
+                            The europa league is the little brother of the champions league.
+                            Not as prestigious for the big clubs but Chelsea were relegated to play in this competition and we went all the way thanks to our main man at the time Fernando Torres.
+                        </p>
+                        <vjs-video-container vjs-ratio="640:264">
+                            <video class="video-js vjs-default-skin" width="100" height="100"
+                                   controls preload="auto">
+                                <!--Wanted to bind src using vm but does not work-->
+                                <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/Benfica+v+Chelsea+2013+UEFA+Europa+League+final.mp4" type='video/mp4' />
+                            </video>
+                        </vjs-video-container>
+                    </div>
+                    <div ng-show="vm.faCup">
+                        <p>This video is our legend Didier Drogba scoring the winning goal in the Fa Cup Semifinal vs rivals Asernal(We won the final).</p>
+                        <vjs-video-container vjs-ratio="640:264">
+                            <video class="video-js vjs-default-skin" width="100" height="100"
+                                   controls preload="auto">
+                                <!--Wanted to bind src using vm but does not work-->
+                                <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/Arsenal+v.+Chelsea+FC++%5B+FA+CUP%5D++Drogba+12.mp4" type='video/mp4' />
+                            </video>
+                        </vjs-video-container>
+                    </div>
+                    <div ng-show="vm.premierLeague">
+                        <p>This is a throwback to the season we won our second premier league trophy. Beautiful goal by Joe Cole to start the party!</p>
+                        <vjs-video-container vjs-ratio="640:264">
+                            <video class="video-js vjs-default-skin" width="100" height="100"
+                                   controls preload="auto">
+                                <!--Wanted to bind src using vm but does not work-->
+                                <source src="https://s3.amazonaws.com/brandensite/Branden+Site+Videos/Joe+Cole+goal+against+Man+Utd.mp4" type='video/mp4' />
+                            </video>
+                        </vjs-video-container>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <md-button href="https://www.chelseafc.com/" target="_blank" md-autofocus>
+                    More on Chelsea.com
+                </md-button>
+                <span flex></span>
+
+                <!--Log this information in database-->
+                <md-button ng-click="vm.answer('1')">
+                    I enjoyed this video!
+                </md-button>
+                <md-button ng-click="vm.answer('0')">
+                    Ehh not a fan.
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
