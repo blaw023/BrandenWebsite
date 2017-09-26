@@ -12,9 +12,9 @@ Content/Blaw
 
 branden-app (Site Pages)
 --Home Page<br/>
---Books Page_
---Investment Page_
---My Skills Page_
+--Books Page<br/>
+--Investment Page<br/>
+--My Skills Page<br/>
 --Sports Dashboard
 
 Branden WebApi
