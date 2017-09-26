@@ -1,6 +1,6 @@
 # BrandenWebsite
 
-Hi! Welcome to my personal website. This is version 1.2. (Production Code)
+Hi! Welcome to my personal website. This is version 1.3. (Production Code)
 
 ----------------------------------------------------------
 
@@ -15,6 +15,7 @@ branden-app (Site Pages)
 --Books Page
 --Investment Page
 --My Skills Page
+--Sports Dashboard
 
 Branden WebApi
 -----------------------------------------
