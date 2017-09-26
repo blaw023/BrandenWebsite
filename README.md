@@ -1,6 +1,6 @@
 # BrandenWebsite
 
-Hi! Welcome to my personal website. This is version 1.3. (Production Code)
+Hi! Welcome to my personal website. This is version 1.3.
 
 ----------------------------------------------------------
 
